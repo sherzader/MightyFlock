@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=yes">
-  <title>Alexa Voice Service demo</title>
+  <title>MightyFlock</title>
   <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-  <h1>Alexa Voice Service demo</h1>
-  <p>Try asking thing like: "What time is it?" or "Tell me the news".</p>
-  <button id="login">Login</button>
-  <button id="logout" disabled>Logout</button>
-  <button id="startRecording" disabled>Start recording</button>
-  <button id="stopRecording" disabled>Stop recording</button>
-  <button id="stopAudio" disabled>Stop audio</button>
-  <button id="pauseAudio" disabled>Pause audio</button>
-  <button id="playAudio" disabled>Play/Resume audio</button>
-  <button id="replayAudio" disabled>Replay audio</button>
+  <h1>MightyFlock</h1>
+  <p>Alexa Voice Service demo for Flock</p>
+  <div id="auth">
+    <button id="login">Login</button>
+    <button id="logout" disabled>Logout</button>
+  </div>
+  <button id="startRecording" disabled></button>
+  <div id="rec">
+    <button id="stopRecording" disabled>Stop recording</button>
+    <button id="stopAudio" disabled>Stop audio</button>
+    <button id="pauseAudio" disabled>Pause audio</button>
+    <button id="playAudio" disabled>Play/Resume audio</button>
+    <button id="replayAudio" disabled>Replay audio</button>
+  </div>
 
   <ul id="log"></ul>
   <ul id="audioLog"></ul>

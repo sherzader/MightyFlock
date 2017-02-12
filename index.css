@@ -1,4 +1,11 @@
+body {
+  margin: 0 auto;
+  width: 700px;
+  font-family: Helvetica;
+}
+
 #log {
+  margin-top: 50px;
   display: block;
   max-height: 300px;
   overflow: auto;
@@ -10,4 +17,48 @@
   max-height: 300px;
   overflow: auto;
   border: 1px solid #F7F7F7;
+}
+
+button {
+  color: white;
+  height: 44px;
+  border-radius: 4px;
+  display: inline-flex;
+  vertical-align: top;
+  text-align: center;
+  display: block;
+  margin-right: 10px;
+}
+
+#auth {
+    display: inline-flex;
+    width: 100%;
+}
+
+#auth > button {
+    width: 100px;
+    background-image: linear-gradient(to bottom, #6FA2FF, #809FFF);
+    border: solid 1px #809FFF;
+}
+
+#rec {
+    margin-top: 20px;
+    display: inline-flex;
+    width: 100%;
+}
+
+#startRecording {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    background-image: url(./microphone.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+#rec > button {
+    width: 80px;
+    background-image: linear-gradient(to bottom, #809FFF, #7745FF);
+    border: solid 1px #809FFF;
 }
