@@ -4,10 +4,9 @@ const player = AVS.Player;
 const avs = new AVS({
   debug: true,
   clientId: 'amzn1.application-oa2-client.0a53180dc48f463199058cb7f8433818',
-  // clientSecret: 'b0208cd1d6a316feb388476c91e400ac7e4ef04eaeebb0349bf4707a7e4a792f',
   deviceId: 'mighty_flock_device',
   deviceSerialNumber: 123,
-  redirectUri: `http://00f19f6c.ngrok.io/authresponse`
+  redirectUri: `https://00f19f6c.ngrok.io/authresponse`
 });
 window.avs = avs;
 
