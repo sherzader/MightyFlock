@@ -1,0 +1,20 @@
+{
+    "name": "MightyFlock",
+    "version": "0.0.1",
+    "description": "",
+    "main": "app.js",
+    "author": "MightyFlock",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "engines" : { "node" : ">=4.4.0" },
+    "dependencies": {
+        "flockos": "0.0.6",
+        "body-parser": "^1.15.2",
+        "express": "^4.14.0",
+        "jsonwebtoken": "^7.1.9",
+        "request": "^2.75.0"
+    }
+}
