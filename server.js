@@ -8,9 +8,23 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const qs = require('qs');
 const multer  = require('multer');
-
+const port = 9745;
 const upload = multer({ dest: 'uploads/' });
 const app = express();
+const options = {
+  // Private Key
+  key: fs.readFileSync('./ssl/server.key'),
+
+  // SSL Certficate
+  cert: fs.readFileSync('./ssl/server.crt'),
+
+  // Make sure an error is not emitted on connection when the server certificate verification against the list of supplied CAs fails.
+  rejectUnauthorized: false
+};
+
+app.listen(port, function () {
+  console.log('MightyFlock app listening on port 9745!')
+})
 
 app.use(bodyParser.urlencoded({ extended: true}))
 app.use(bodyParser.json());
@@ -36,7 +50,7 @@ app.get('/parse-m3u', (req, res) => {
 
   const urls = [];
 
-  request(m3uUrl, function(error, response, bodyResponse) {
+  request(m3uUrl, (error, response, bodyResponse) => {
     console.log(bodyResponse, m3uUrl)
     if (bodyResponse) {
       urls.push(bodyResponse);
@@ -53,30 +67,26 @@ flock.appSecret = "caa05b4d-e500-4720-b443-3b1c004f5e16";
 app.use(flock.events.tokenVerifier);
 
 // listen for events on /events
-app.post('/events', function(req, res, next) {
+app.post('/events', (req, res, next) => {
     res.sendStatus(200);
     next();
 }, flock.events.listener);
 
 // listen for app.install event, mapping of user id to tokens is saved
 // in the in-memory database
-flock.events.on('app.install', function (event, res) {
+flock.events.on('app.install', (event, res) => {
     console.log("MADE IT");
     store.saveUserToken(event.userId, event.token);
 });
 
-app.listen(4040, function () {
-  console.log('Example app listening on port 4040!')
-})
-
-flock.events.on('client.slashCommand', function (event, callback) {
+flock.events.on('client.slashCommand', (event, callback) => {
     // handle slash command event here
     // invoke the callback to send a response to the event
     // callback(null, { text: 'Received your command' });
     flock.callMethod('chat.sendMessage', store.getUserToken(event.userId), {
         to: event.chat,
         text: "wuddup",
-    }, function(error, response) {
+    }, (error, response) => {
         if (!error) {
             console.log(response);
         } else {
