@@ -1,4 +1,4 @@
-const AVS = require('./');
+const AVS = require('alexa-voice-service');
 const player = AVS.Player;
 
 const avs = new AVS({
