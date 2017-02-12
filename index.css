@@ -31,7 +31,8 @@ button {
 }
 
 #auth {
-    display: inline-flex;
+    display: none;
+    /*display: inline-flex;*/
     width: 100%;
 }
 
@@ -61,4 +62,11 @@ button {
     width: 80px;
     background-image: linear-gradient(to bottom, #809FFF, #7745FF);
     border: solid 1px #809FFF;
+}
+
+#replayAudio {
+    display: none;
+}
+#stopAudio {
+    display: none;
 }
