@@ -1,21 +1,35 @@
 {
-    "name": "MightyFlock",
-    "version": "0.0.1",
-    "description": "",
-    "main": "app.js",
-    "author": "MightyFlock",
-    "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": ""
-    },
-    "engines" : { "node" : ">=4.4.0" },
-    "dependencies": {
-        "flockos": "0.0.6",
-        "body-parser": "^1.15.2",
-        "express": "^4.14.0",
-        "jsonwebtoken": "^7.1.9",
-        "request": "^2.75.0",
-        "mustache": "2.2.1"
-    }
+  "name": "MightyFlock",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "author": "MightyFlock",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+   "test": "echo \"Error: no test specified\" && exit 1",
+   "start": "node server.js",
+   "watch": "./node_modules/watchify/bin/cmd.js ./index.js -o ./index.bundle.js -v -d -t [ babelify ]"
+ },
+  "engines": {
+    "node": ">=4.4.0"
+  },
+  "dependencies": {
+    "alexa-voice-service": "0.0.7",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "flockos": "0.0.6",
+    "jsonwebtoken": "^7.1.9",
+    "request": "^2.75.0",
+    "cors": "^2.7.1",
+    "http-message-parser": "0.0.20",
+    "multer": "^1.1.0"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "watchify": "^3.7.0"
+  }
 }
